@@ -44,8 +44,8 @@ export class OptionsComponent {
       if ('sigs' in note) {
         this.options.sigs = [...new Set(this.options.sigs.concat(note.sigs))];
       }
-      if (this.options.releaseVersions.indexOf(note.release_version) < 0) {
-        this.options.releaseVersions.push(note.release_version);
+      if ('release_version' in note) {
+        this.options.releaseVersions = [...new Set(this.options.releaseVersions.concat(note.release_version))];
       }
     }
   }
